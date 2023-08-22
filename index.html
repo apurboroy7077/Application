@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        color: #5fbe69;
+        background-color: black;
+        font-family: "Courier New", Courier, monospace;
+        font-size: 1.1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container"></div>
+    <script>
+      let container = document.getElementsByClassName("container")[0];
+      let messages = [
+        "Initializing Hack Tool...",
+        "Connecting to Facebook...",
+        "Connecting to Server 1...",
+        "Connection failed, Retrying...",
+        "Connecting to server 2...",
+        "Connected Successfully...",
+        "Username Sakib...",
+        "Trying Brute Force...",
+        "200K Password tried...",
+        "Match not found...",
+        "Another 200K password tried...",
+        "Match Found...",
+        "Accessing Account...",
+        "Hack Successful...",
+      ];
+      let i = 0;
+      let printer = () => {
+        if (i < messages.length) {
+          setTimeout(() => {
+            container.innerHTML =
+              container.innerHTML + messages[i] + "<br><br>";
+            i++;
+            printer();
+          }, 3000);
+        }
+      };
+      printer();
+    </script>
+  </body>
+</html>
